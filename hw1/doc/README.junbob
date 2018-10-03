@@ -1,0 +1,18 @@
+username: junbob
+
+Find and process more sentences from the same distribution as the devset to expand our training set:
+
+	- Found the full story of "Monty Python and The Holy Grail" in http://www.castlebar.ie/board/msgjan2001/22833.htm
+
+	- processed sentences are stored in quotes_new_preprocessed.txt under branch junbob.
+
+	- More details and the codes can be found in process_more_sentences.ipynb under branch junbob.
+
+
+
+Generate tags and assign weights for all allowed words (another approach, but not included in the final submission):
+
+	- Generated weights, tags and words are stored in tags_weight.gr under branch junbob.
+
+	- More details and the codes can be found in generate_tags.ipynb under branch junbob.
+
