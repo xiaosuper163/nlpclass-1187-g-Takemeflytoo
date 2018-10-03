@@ -7,5 +7,4 @@ sklearn
 nltk
 nbimporter
 benepar
-StanfordCoreNLP
 codecs
