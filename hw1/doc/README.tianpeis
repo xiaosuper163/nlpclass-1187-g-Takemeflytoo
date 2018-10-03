@@ -1,0 +1,8 @@
+Task1: add tags to words in allowed_word.txt
+    - used nltk.pos_tag() function to assign each word a tag without considering the context (see original_tagged_allowed_words.txt)
+    - This approach has some issues. Firstly, pos_tag() cannot recognize "you're", "we've", which have a quotation in the word. The package will tokenize the word and splits it, which doesn't meet the requirement. pos_tag also gave a lot of words(around 350) wrong tags.   
+    - manually correct these wrong tags based on common sense (see tagged_allowed_words.txt)
+    - This approach is rejected since it didn't consider the context
+
+Task2: manually add grammar rules to S1 based on  devset.tree.
+	- This grammar didn't give us a good entropy. (see S1_tianpeis.gr)
