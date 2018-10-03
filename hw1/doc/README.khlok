@@ -1,0 +1,18 @@
+username: khlok
+
+Generate Tags with Weight for all allowed words
+    
+	- Generated Tagged_Vocab.gr
+	
+	- Using StanfordCoreNLP and StanfordPOSTagger to generate POS tag for both single word and sentences
+	
+	- Please see the jupyter notebook `'cgw.ipynb'` Part 2 for details.	
+
+
+Automatic Generate S1 rules using StanfordCoreNLP and benepar (another approach, but not included in the final submission):
+
+	- Modified tree's tag that are generated from parser rules based on specific rules, such as 'ow, Aaaaagh, Aaauggh, Aah
+
+	- More details and the codes can be found in 'Grammar Generator (Jacky).ipynb' under branch khlok.
+
+Combined and formatted Juypter notebook from team-mate.
