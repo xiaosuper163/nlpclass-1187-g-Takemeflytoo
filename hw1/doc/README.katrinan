@@ -1,0 +1,8 @@
+### username: katrinan
+
+* The work I have done for the final submission:
+  * Implement the approaches of generating rules for S1 with example_sentences.txt and/or devset.txt. In achiving this, I:
+    - Produced parsed trees with Berkeley Neural Parser
+    - Generated weighted rules from parsed trees
+
+For more details around how this approach works, please see the jupyter notebook `'cgw.ipynb'`.
