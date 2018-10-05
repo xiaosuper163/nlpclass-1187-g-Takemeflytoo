@@ -8,4 +8,3 @@ nltk
 nbimporter
 benepar
 StanfordCoreNLP
-codecs
