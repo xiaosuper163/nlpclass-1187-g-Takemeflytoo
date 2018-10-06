@@ -1,6 +1,5 @@
-import sys, bz2, re
+import sys, bz2, re, string
 from collections import namedtuple
-
 # # A language model scores sequences, and must account
 # # for both beginning and end of each sequence. Example API usage:
 # lm = models.LM(filename)
@@ -50,14 +49,14 @@ class LM:
             print(msg, file=sys.stderr)
 
     def score_seq(self, sequence):
-        lm_state = lm.begin()
+        lm_state = self.begin()
         lm_logprob = 0.0 
         for token in list(self.clean_seq(sequence)):
             self.maybe_write("state: {}".format(lm_state + (token,)))
-            (lm_state, logprob) = lm.score(lm_state, token)
+            (lm_state, logprob) = self.score(lm_state, token)
             lm_logprob += logprob
             self.maybe_write("logprob={}".format(logprob))
-        lm_logprob += lm.end(lm_state)
+        lm_logprob += self.end(lm_state)
         return lm_logprob
 
     def get_bitstring_spans(self, bitstring):
@@ -78,17 +77,17 @@ class LM:
         seq_by_bits = [ sequence[i] if i in spans else '\t' for i in range(len(sequence)) ]
         self.maybe_write("seq_by_bits: {}".format(seq_by_bits))
 
-        lm_state = lm.begin()
+        lm_state = self.begin()
         lm_logprob = 0.0 
         for token in list(seq_by_bits):
             if token == '\t': # should we skip this token?
                 lm_state = ()
                 continue
             self.maybe_write("state: {}".format(lm_state + (token,)))
-            (lm_state, logprob) = lm.score(lm_state, token)
+            (lm_state, logprob) = self.score(lm_state, token)
             lm_logprob += logprob
             self.maybe_write("logprob={}".format(logprob))
-        lm_logprob += lm.end(lm_state)
+        lm_logprob += self.end(lm_state)
         return lm_logprob
 
 if __name__ == '__main__':
