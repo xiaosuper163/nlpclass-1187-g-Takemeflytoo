@@ -117,7 +117,7 @@ class BeamSearch:
             if i in phi_p:
                 mask.update({i : 'o'})
             else:
-                mask.update({i : '_'})
+                mask.update({i : '.'})
         mask = BeamSearch.replace_dict(content, mask)
         new_score = lm.score_bitstring(BeamSearch.replace_dict(content, phi_p), mask)
         fmh = 0
