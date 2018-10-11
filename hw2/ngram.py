@@ -1,8 +1,9 @@
 import sys, bz2, re, string
 from collections import namedtuple
+
 # # A language model scores sequences, and must account
 # # for both beginning and end of each sequence. Example API usage:
-# lm = models.LM(filename)
+# lm = LM(filename, n=6, verbose=False)
 # sentence = "This is a test ."
 # lm_state = lm.begin() # initial state is always <s>
 # logprob = 0.0
@@ -13,7 +14,7 @@ from collections import namedtuple
 ngram_stats = namedtuple("ngram_stats", "logprob, backoff")
 class LM:
     def __init__(self, filename, n=6, verbose=False):
-        print("Reading language model from {}...\n".format(filename), file=sys.stderr)
+        print("Reading language model from {}...".format(filename), file=sys.stderr)
         self.table = {}
         self.n = n
         self.history = n-1
@@ -23,6 +24,7 @@ class LM:
             if len(entry) > 1 and entry[0] != "ngram":
                 (logprob, ngram, backoff) = (float(entry[0]), tuple(entry[1].split()), float(entry[2] if len(entry)==3 else 0.0))
                 self.table[ngram] = ngram_stats(logprob, backoff)
+        print("Done.", file=sys.stderr)
 
     def begin(self):
         return ("<s>",)
@@ -91,18 +93,17 @@ class LM:
         return lm_logprob
 
 if __name__ == '__main__':
-    import sys, string
-
     sequence = 'In a few cases, a multilingual artifact has been necessary to facilitate decipherment, the Rosetta Stone being the classic example. Statistical techniques provide another pathway to decipherment, as does the analysis of modern languages derived from ancient languages in which undeciphered texts are written. Archaeological and historical information is helpful in verifying hypothesized decipherments.'
 
-    lm = LM("data/6-gram-wiki-char.lm.bz2", n=6, verbose=True)
+    lm = LM("data/6-gram-wiki-char.lm.bz2", n=6, verbose=False)
 
-    print(sequence)
     lm_logprob = lm.score_seq(sequence)
-    print("TOTAL LM LOGPROB: {}".format(lm_logprob), file=sys.stderr)
+    print("TOTAL LM LOGPROB for \"{}\": {}".format(sequence, lm_logprob), file=sys.stderr)
 
-    print("TOTAL LM LOGPROB: {}".format(lm.score_seq('this is the text.')), file=sys.stderr)
-    print("TOTAL LM LOGPROB: {}".format(lm.score_seq('jasbklfhthejkldhf')), file=sys.stderr)
+    s1 = 'zkxxuqxzpuq'
+    s2 = 'thisisatest'
+    print("TOTAL LM LOGPROB for \"{}\": {}".format(s1, lm.score_seq(s1)), file=sys.stderr)
+    print("TOTAL LM LOGPROB for \"{}\": {}".format(s2, lm.score_seq(s2)), file=sys.stderr)
 
     print(lm.get_bitstring_spans('..oo...ooo..')) 
     print(lm.score_bitstring('thisisatest', 'oo...oo.ooo'))
