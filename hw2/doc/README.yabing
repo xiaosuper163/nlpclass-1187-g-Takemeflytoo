@@ -1,0 +1,11 @@
+### username: yabing
+
+* I implemented the original baseline beam_search function and score function. Based on another teammate, Jacky(khlok)'s implementation of beam_search function, I modified the beam_search function. It is included in the final submission.
+
+* I implemented the optimized score function which can compute the score based on the previous mapping relationships and scores. This can speed up the whole process for three to four times so that we can try larger beam size. It is included in the final submission.
+
+* I implemented the function `find_ext_order` to find a better extension order based on the reference the professor provided. It is included in the final submission.
+
+* I implemented the approach to track at which iteration the correct answer has been pruned. Based on this, I experimented with several combinations of weights to achieve different extension orders.
+
+* I implemented a multiprocessing version with `joblib`. It doesn't significantly reduce the running time on windows machine so it is not included in the final submission. For multiprocessing implementation, other teammates tried library of multiprocessing which is included in the final submission.
