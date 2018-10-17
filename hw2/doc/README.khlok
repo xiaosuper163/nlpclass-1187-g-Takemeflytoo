@@ -1,0 +1,5 @@
+Read papers "Beam Search for Solving Substitution Ciphers", "Decipherment of Substitution Ciphers with Neural Language Models" in detail, and a few of others.
+Based on paper and write the draft version of Beam Search, and score function (SCORE(\phi^\prime) = SCORE(\phi) + NEW(\phi^\prime) − FMH(\phi^\prime)), However, it doesnt quit work..,
+Please see detail implementation in "decipher_khlok.ipynb", some of the methods has been adroped into the final draft version.
+
+Also tried implement Muti-process version, however, it doesnt work becuase of window's limitation... 
