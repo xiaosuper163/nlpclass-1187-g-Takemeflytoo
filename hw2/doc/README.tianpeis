@@ -1,0 +1,3 @@
+- Debug the default baseline implementation and tried on different hyperparameters to analyze the time
+- Read essays that are listed on the homework page and find other resources that can improve speed
+- Implemented the highest_ngram_count function to get an ext_order and combined with different approaches of beam_search and score functions
