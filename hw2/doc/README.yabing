@@ -9,3 +9,5 @@
 * I implemented the approach to track at which iteration the correct answer has been pruned. Based on this, I experimented with several combinations of weights to achieve different extension orders.
 
 * I implemented a multiprocessing version with `joblib`. It doesn't significantly reduce the running time on windows machine so it is not included in the final submission. For multiprocessing implementation, other teammates tried library of multiprocessing which is included in the final submission.
+
+* I wrote the final notebook for submission.
