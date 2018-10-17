@@ -1,0 +1,4 @@
+* Read papers "Solving Substitution Ciphers with Combined Language Models" in detail, as well as went through the other papers.
+* Found implementation for the paper, however not applicable to homophonic ciphers.
+* Implemented NLM baseline, however took too long to run.
+* Ran the multi-processing beam search with 1M beam size in Azure VM with 64 vCPU.
