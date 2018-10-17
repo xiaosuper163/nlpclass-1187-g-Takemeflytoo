@@ -1,5 +1,7 @@
 import sys, bz2, re, string
 from collections import namedtuple
+import os
+import pickle
 
 # # A language model scores sequences, and must account
 # # for both beginning and end of each sequence. Example API usage:
@@ -13,17 +15,26 @@ from collections import namedtuple
 # logprob += lm.end(lm_state) # transition to </s>, can also use lm.score(lm_state, "</s>")[1]
 ngram_stats = namedtuple("ngram_stats", "logprob, backoff")
 class LM:
-    def __init__(self, filename, n=6, verbose=False):
+    def __init__(self, filename, n=6, cache_dir=r'cache/', verbose=False):
         print("Reading language model from {}...".format(filename), file=sys.stderr)
         self.table = {}
         self.n = n
         self.history = n-1
         self.verbose = verbose
-        for line in bz2.open(filename, 'rt'):
-            entry = line.strip().split("\t")
-            if len(entry) > 1 and entry[0] != "ngram":
-                (logprob, ngram, backoff) = (float(entry[0]), tuple(entry[1].split()), float(entry[2] if len(entry)==3 else 0.0))
-                self.table[ngram] = ngram_stats(logprob, backoff)
+        if cache_dir is not None and os.path.exists(cache_dir+'six_gram.p'):
+            cache_filename = cache_dir+'six_gram.p'
+            if os.path.exists(cache_filename):
+                with open(cache_filename, 'rb') as f:
+                    self.table = pickle.load(f)
+        else:
+            for line in bz2.open(filename, 'rt'):
+                entry = line.strip().split("\t")
+                if len(entry) > 1 and entry[0] != "ngram":
+                    (logprob, ngram, backoff) = (float(entry[0]), tuple(entry[1].split()), float(entry[2] if len(entry)==3 else 0.0))
+                    self.table[ngram] = ngram_stats(logprob, backoff)
+            if cache_dir is not None:
+                with open(cache_dir+'six_gram.p', 'wb') as f:
+                    pickle.dump(self.table, f)
         print("Done.", file=sys.stderr)
 
     def begin(self):
@@ -93,6 +104,8 @@ class LM:
         return lm_logprob
 
 if __name__ == '__main__':
+    import os
+    print(os.getcwd())
     sequence = 'In a few cases, a multilingual artifact has been necessary to facilitate decipherment, the Rosetta Stone being the classic example. Statistical techniques provide another pathway to decipherment, as does the analysis of modern languages derived from ancient languages in which undeciphered texts are written. Archaeological and historical information is helpful in verifying hypothesized decipherments.'
 
     lm = LM("data/6-gram-wiki-char.lm.bz2", n=6, verbose=False)
