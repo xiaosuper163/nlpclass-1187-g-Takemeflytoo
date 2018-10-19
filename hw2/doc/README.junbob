@@ -1,0 +1,7 @@
+### username: junbob
+
+* I implemented the multiprocessing version of the beam_search function based on yabin's original single threaded beam_search function. It is included in the final submission.
+
+* Read paper "Improved Decipherment of Homophonic Ciphers", and implemented the "backup version" of the extension order function. It is not included in the final submission, for details, please see decipher_junbob.ipynb.
+
+* Experiments on weights, ext_limits, ext_orders and the beam size

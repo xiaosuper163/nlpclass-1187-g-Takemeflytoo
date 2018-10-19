@@ -1,0 +1,5 @@
+Read papers "Beam Search for Solving Substitution Ciphers", "Decipherment of Substitution Ciphers with Neural Language Models" in detail, and a few of others.
+Based on paper and write the draft version of Beam Search, and score function (SCORE(\phi^\prime) = SCORE(\phi) + NEW(\phi^\prime) − FMH(\phi^\prime)), However, it doesn't quite work..,
+Please see detail implementation in "decipher_khlok.ipynb", some of the methods have been adopted into the final draft version.
+
+Also try to implement multiprocessing with pythion's multiprocessing Pool and NLM to fill up missing symbols. They doesnt work because of 1. window's limitation and 2. 1060 is way to slow for neural network.
