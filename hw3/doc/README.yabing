@@ -1,0 +1,11 @@
+### username: yabing
+
+* Discussed with group mates regarding the perceptron algorithm and implementation details.
+
+* Followed the first path of improving the baseline mentioned in the assignment description.
+
+* Implemented the baseline and added bigram features based on the pseudo-code provided by Prof. Sarkar. Tried different minor changes to the baseline to see if there is some improvement.
+
+* Implemented the averaging parameter approach.
+
+* Put the code together for submission.
