@@ -32,11 +32,47 @@ import perc
 import sys, optparse, os
 from collections import defaultdict
 
-def perc_train(train_data, tagset, numepochs):
+def perc_avg_train(train_data, tagset, numepochs):
     feat_vec = defaultdict(int)
-    # insert your code here
-    # please limit the number of iterations of training to n iterations
-    return feat_vec
+    avg_feat_vec = defaultdict(float)
+    default_tag = tagset[0]
+
+    for epoch in range(numepochs):
+        count_mistake = 0
+        print(f"Running on epoch {epoch+1}......")
+        tic = time.time()
+        for _, (labeled_list, feat_list) in enumerate(train_data):
+            pred_output = perc.perc_test(feat_vec, labeled_list, feat_list, tagset, default_tag)
+            true_output = [x.split()[2] for x in labeled_list]
+
+            if pred_output != true_output:
+                count_mistake += 1
+                feat_index = 0
+                
+                for w_index in range(len(pred_output)):
+                    pred_tag = pred_output[w_index]
+                    true_tag = true_output[w_index]
+                    (feat_index, feats) = perc.feats_for_word(feat_index, feat_list)
+                    for feat in feats:
+                        if feat == 'B' and w_index > 0:
+                            if true_output[w_index-1] != pred_output[w_index-1] or pred_tag != true_tag:
+                                feat_vec['B:' + true_output[w_index-1], true_tag] += 1
+                                feat_vec['B:' + pred_output[w_index-1], pred_tag] -= 1
+                        elif pred_tag != true_tag:
+                            feat_vec[feat, true_tag] += 1
+                            feat_vec[feat, pred_tag] -= 1
+
+
+            for key in feat_vec.keys():
+                # γ = σ/(mT)
+                avg_feat_vec[key] += feat_vec[key]
+
+        toc = time.time()
+        print(f'Epoch {epoch+1} finished. Time cost on this epoch: {toc-tic}. Number of mistakes: {count_mistake}.')
+
+    for key in avg_feat_vec.keys():
+        avg_feat_vec[key] /= (numepochs * len(train_data))
+    return avg_feat_vec
 
 if __name__ == '__main__':
     optparser = optparse.OptionParser()
