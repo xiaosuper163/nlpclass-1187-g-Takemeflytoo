@@ -93,6 +93,6 @@ if __name__ == '__main__':
     print("reading data ...", file=sys.stderr)
     train_data = perc.read_labeled_data(opts.trainfile, opts.featfile, verbose=False)
     print("done.", file=sys.stderr)
-    feat_vec = perc_train(train_data, tagset, int(opts.numepochs))
+    feat_vec = perc_avg_train(train_data, tagset, int(opts.numepochs))
     perc.perc_write_to_file(feat_vec, opts.modelfile)
 
