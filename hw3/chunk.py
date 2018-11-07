@@ -31,6 +31,7 @@ Inside the perceptron training loop:
 import perc
 import sys, optparse, os
 from collections import defaultdict
+import time
 
 def perc_avg_train(train_data, tagset, numepochs):
     feat_vec = defaultdict(int)
