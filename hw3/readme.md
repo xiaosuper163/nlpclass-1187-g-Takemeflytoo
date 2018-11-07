@@ -1,4 +1,3 @@
-
 # Phrasal Chunking
 
 ## Setup
@@ -9,7 +8,7 @@
 	
 ## Running option for jupyter notebook
 
-We documented our path of developing the approach in the jupyter notebook `chunk.ipynb`. In that notebook, we commented out all the code for developing the approach, but not used for final submission. If the TA wants to check if those code actually work, please kindly uncomment the code you want to run. The output should be exactly the same as the output left in the jupyter notebook. In addition, training the model for final submission takes more than one hour on my machine (i7 7700k). To save more time for TA, we pushed the model file `baseline_bigram_avg.model` onto the repo. Running the whole jupyter notebook will NOT re-train the model. Instead it will read the `baseline_bigram_avg.model` and make predictions with it. If you want to retrain the model with our implementation, please kindly uncomment all the commented code in the third last cell. Besides, we put the implementation of `perc_avg_train` in `chunk.py`. So you can score the hidden test set with the command line option.
+We documented our path of developing the approach in the jupyter notebook `chunk.ipynb`. In that notebook, we commented out all the code for developing the approach, but not used for final submission. If the TA wants to check if those code actually work, please kindly uncomment the code you want to run. The output should be exactly the same as the output left in the jupyter notebook. In addition, training the model for final submission takes more than one hour on my machine (i7 7700k). To save more time for TA, we pushed the model file `baseline_bigram_avg.model` onto the repo. Running the whole jupyter notebook will NOT re-train the model. Instead it will read the `baseline_bigram_avg.model` and make predictions with it. If you want to retrain the model with our implementation, please kindly uncomment all the commented code in the third last cell. Besides, we put the implementation of `perc_avg_train` in `chunk.py`. So you can train the model with the command line option as well.
 
 ## Training phase
 
