@@ -1,0 +1,12 @@
+### username: khlok
+
+1. read papers -
+   "Discriminative Training Methods for Hidden Markov Models: Theory and Experiments with Perceptron Algorithms"
+   "syntax-parsing-survey-2011"
+   "Voting between Multiple Data Representations for Text Chunking"
+
+2. Discussed the baseline implementation with group members, try implement "syntax-parsing-survey-2011"...
+
+3. Try to speed up training process using Ray ( parallel process that can run accompany with deep neural net), 
+but seems like the task is not good for muti-tasking (parameter server is slowing everything down...) and simply
+compile python (cython) will make it 30% faster... 
