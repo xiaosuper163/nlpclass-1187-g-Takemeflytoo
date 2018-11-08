@@ -12,7 +12,7 @@ We documented our path of developing the approach in the jupyter notebook `chunk
 
 ## Training phase
 
-    python3 chunk.py > baseline_bigram_avg.model
+    python3 chunk.py -m baseline_bigram_avg.model
 
 ## Testing and Evaluation phase
 
