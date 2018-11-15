@@ -35,10 +35,7 @@ for pair in bitext:
     f = f.union(set(pair[0]))
     e = e.union(set(pair[1]))
     for f_i in set(pair[0]):
-        if f_i in f_count.keys():
-            f_count[f_i] += 1
-        else:
-            f_count[f_i] = 1
+        f_count[f_i] += 1
 N = len(bitext)
 
 # train the model
