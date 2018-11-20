@@ -82,7 +82,7 @@ def LLR_initialization(bitext, exp = 1, isReverse=False):
         LLRs[i] = LLRs[i] / largest
         
     # raise each LLR score to an empirically optimized exponent
-    #for i in LLRs.keys():
-            #LLRs[i] = LLRs[i] ** exp
+    for i in LLRs.keys():
+        LLRs[i] = LLRs[i] ** exp
                
     return LLRs
