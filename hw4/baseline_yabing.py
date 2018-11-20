@@ -19,7 +19,8 @@ if opts.logfile:
     logging.basicConfig(filename=opts.logfile, filemode='w', level=logging.INFO)
 
 sys.stderr.write("Training with Expectation Maximization...\n")
-bitext = [[sentence.strip().split() for sentence in pair] for pair in islice(zip(open(f_data), open(e_data)), opts.num_sents)]
+bitext = [[sentence.strip().split() for sentence in pair] \
+          for pair in islice(zip(open(f_data,encoding="utf8"), open(e_data,encoding="utf8")), opts.num_sents)]
 #f_count = defaultdict(int)
 #e_count = defaultdict(int)
 #fe_count = defaultdict(int)
