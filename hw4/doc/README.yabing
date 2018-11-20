@@ -1,0 +1,13 @@
+### username: yabing
+
+* Implemented the baseline based on the pseudo code from the assignment description.
+
+* Implemented "add n smoothing" approach.
+
+* Implemented using posterior probability instead of using "argmax" approach to decode.
+
+* Implemented "align by agreement". Train two models independently and combine two models while aligning using the product of two posteriors.
+
+* Combined all the approaches listed above and experimented with several sets of parameters (n in n smoothing, threshold). AER of French-English alignment was improved to 0.1925 which is very close to the limit of IBM Model 1 best performance
+
+* Organized the notebook and code for submission.
