@@ -1,0 +1,9 @@
+### username: khlok
+
+* Read paper "Improving IBM Word-Alignment Model 1"
+
+* Discussion with group members
+
+* Implemented add NULL Words for Model 1, please see align_jacky_null.ipynb for detail
+
+* Debug and tested Add Null for final approach
