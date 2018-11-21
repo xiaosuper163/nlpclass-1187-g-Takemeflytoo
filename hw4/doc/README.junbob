@@ -1,0 +1,9 @@
+### username: junbob
+
+* Read paper "Improving IBM Word-Alignment Model 1"
+
+* Discussion with group members
+
+* Implemented log-likelihood-ratio(LLR) approach for initialization, see LLR.py
+
+* Debug and tested LLR for different approaches, but we didn't include it in our final submission since it sometimes makes the results worse
