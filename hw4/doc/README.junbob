@@ -6,4 +6,4 @@
 
 * Implemented log-likelihood-ratio(LLR) approach for initialization, see LLR.py
 
-* Debug and tested LLR for different approaches, but we didn't include it in our final submission since it sometimes makes the results worse
+* Debug and tested LLR initialization for all of our different approaches, but we didn't include it in our final submission since it sometimes makes the results worse
