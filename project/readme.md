@@ -10,4 +10,6 @@ Here is how we divided our work, according to the pipeline shown above. Please s
 - junbob: Ensemble
 - Each one of us experimented various DNN models including LSTM, GRU, CapsNet, CNN
 
+![Result](./images/result.png)
+
 As shown in the figure above, we ended up at top 15% in Kaggle Leaderboard.
