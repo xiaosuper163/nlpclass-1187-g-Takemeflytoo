@@ -12,4 +12,4 @@ Here is how we divided our work, according to the pipeline shown above. Please s
 
 ![Result](./images/result.png)
 
-As shown in the figure above, we ended up at top 15% in Kaggle Leaderboard.
+As shown in the figure above, we ended up at top 17% in Kaggle Leaderboard.
