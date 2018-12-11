@@ -1,0 +1,14 @@
+numpy
+scipy
+matplotlib
+pandas
+sklearn
+nltk
+notebook
+nbimporter
+torch
+torchvision
+tqdm
+Keras==2.2.4
+keras-tqdm==2.0.1
+spacy==2.0.13
