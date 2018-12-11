@@ -1,8 +1,8 @@
 This project is a currently running Kaggle competition: [Quora Insincere Questions Classfication](https://www.kaggle.com/c/quora-insincere-questions-classification)
 
-![approach](./images/approach.png)  
+<img src="./images/approach.png" alt="result" width="350"/>  
 
-Here is how we divided our work, according to the pipeline shown above. Please see the work in detail in project.ipynb: 
+**Here is how we divided our work**, according to the pipeline shown above. Please see the work in detail in project.ipynb: 
 - khlok: EDA, Topic Modelling
 - tianpeis: EDA, Topic Modelling
 - katrinan: starter Kaggle kernel, FastAI-ULMFit  
@@ -10,6 +10,6 @@ Here is how we divided our work, according to the pipeline shown above. Please s
 - junbob: Ensemble
 - Each one of us experimented various DNN models including LSTM, GRU, CapsNet, CNN
 
-![Result](./images/result.png)
+<img src="./images/result.png" alt="result" width="350"/>
 
-As shown in the figure above, we ended up at top 17% in Kaggle Leaderboard.
+As shown in the figure above, **we ended up at top 17% in Kaggle Leaderboard**.
