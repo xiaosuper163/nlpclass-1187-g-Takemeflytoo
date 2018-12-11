@@ -1,4 +1,4 @@
-This project is a currently running Kaggle competetion: [Quora Insincere Questions Classfication](https://www.kaggle.com/c/quora-insincere-questions-classification)
+This project is a currently running Kaggle competition: [Quora Insincere Questions Classfication](https://www.kaggle.com/c/quora-insincere-questions-classification)
 
 ![approach](./images/approach.png)  
 
