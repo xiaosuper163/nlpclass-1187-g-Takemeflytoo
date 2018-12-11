@@ -1,8 +1,10 @@
-This project is a currently running Kaggle competition: [Quora Insincere Questions Classfication](https://www.kaggle.com/c/quora-insincere-questions-classification)
+## This project is our final project for natural language processing course (CMPT 825)
+## This project is a currently running Kaggle competition: [Quora Insincere Questions Classfication](https://www.kaggle.com/c/quora-insincere-questions-classification)
+This is a kernel only competition.
 
 <img src="./images/approach.png" alt="result" width="500"/>  
 
-**Here is how we divided our work**, according to the pipeline shown above. Please see the work in detail in project.ipynb: 
+## **Here is how we divided our work**, according to the pipeline shown above. Please see the work in detail in `project.ipynb`: 
 - khlok: EDA, Topic Modelling
 - tianpeis: EDA, Topic Modelling
 - katrinan: starter Kaggle kernel, FastAI-ULMFit  
