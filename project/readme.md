@@ -1,4 +1,6 @@
 ## This project is our final project for natural language processing course (CMPT 825)
+NOTE: # Download data from google drive
+wget "t "https://drive.google.com/drive/folders/1WjZiNjOI5I_hudHnZbzvG1_DzYvZrlyO?usp=sharing""
 ## This project is a currently running Kaggle competition: [Quora Insincere Questions Classfication](https://www.kaggle.com/c/quora-insincere-questions-classification)
 This is a kernel only competition. Our write up documentation includes the work of five persons. We tried our best to make every single cell runnable. We include a python jupyter notebook `best_submission.ipynb` in this repo. If you really want to try it, You can simply start a kaggle kernel and upload the notebook and commit the kernel.
 
